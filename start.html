@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #212020;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .start-button {
+            background-color: #636363; /* Solid gray */
+            color: #dcdcdc; /* White text */
+            padding: 15px 30px;
+            border: 0;
+            font-size: 1.2em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: #505050; /* Darker shade on hover */
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Centered Start Button -->
+    <button class="start-button" onclick="window.location.href='home.html'">Start</button>
+</body>
+</html>

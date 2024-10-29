@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px; /* Fixed width for the entire container */
+            height: 768px; /* Fixed height for the entire container */
+            top: 50%;  /* Center the container vertically */
+            left: 50%; /* Center the container horizontally */
+            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
+            background-image: url('background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Prevents overflow */
+            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(1); /* Start smaller */
+            }
+            to {
+                transform: translate(-50%, -33%) scale(1.2); /* End at normal size */
+            }
+        }
+
+        .new-container {
+            position: absolute;
+            width: 355px;  /* Increased width for better readability */
+            height: 220px; /* Adjusted height for search and content */
+            background: #c5c5c5;
+            padding: 15px;
+            border-radius: 1px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            top: 135px; /* Adjust to position inside the container */
+            left: 500px; /* Adjust to position inside the container */
+            border: 1px solid #4256a6;
+            overflow-y: auto;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .search-bar {
+            position: absolute;
+            top: 2px; /* Adjust position as needed */
+            left: 52.8%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            z-index: 400; /* Make sure it appears above other elements */
+            width: 260px; /* Set a specific width for the search bar */
+            height: 230px; /* Set a specific width for the search bar */
+            padding: 5px 100px;
+        }
+
+        .search-bar input {
+            width: 100%; /* Make input take up the full width of the search bar container */
+            height: 3px; /* Adjust height for better visibility */
+            padding: 5px 10px;
+            border: 1px solid #f4f4f4;
+            border-radius: 1px; /* Adjusted for better appearance */
+            font-size: 12px; /* Increased font size for readability */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+        .centered-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within the elements */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        .job {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .job-date {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .job-description {
+            margin-left: 10px;
+        }
+
+        .background {
+            margin-top: 20px;
+            width: 150px;
+            display: flex;
+            position: relative;
+        }
+
+        .background-content {
+            padding: 5px;
+            text-align: right;
+        }
+
+        .typing-effect {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            color: #fff;
+            font-size: 1em;
+            font-family: 'IBM Plex Mono', monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            background-color: #000;
+            padding: 2px 4px;
+            border-radius: 4px;
+            max-width: 250px;
+            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+            z-index: 500; /* Ensure it's above other elements */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: rgb(249, 249, 249); }
+        }
+
+        /* Semi-transparent home button */
+        .home-button {
+            position: absolute;
+            bottom: 640px;
+            right: 855px;
+            background-color: rgba(219, 219, 219, 0.3);
+            color: #c4c4c4;
+            border: 0px solid #4256a6;
+            padding: 5px 15px;
+            font-size: 1em;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Keyword..." id="search-input">
+        </div>
+
+        <!-- Container with resume content -->
+        <div class="new-container">
+            <header class="centered-header">
+                <h1>Marcela Rojas</h1>
+                <p>22mr6@queensu.ca | 604-652-4744</p>
+                <p><a href="https://ca.linkedin.com/in/marcelarojass" target="_blank">linkedin.com/in/marcelarojass</a></p>
+            </header>
+
+            <section id="education">
+                <h2>EDUCATION</h2>
+                <p><strong>Bachelor of Applied Mathematics</strong>, Minor in Computer Science, Queen’s University, Kingston, ON<br>2022 - Present</p>
+            </section>
+
+            <section id="experience">
+                <h2>PROFESSIONAL EXPERIENCE</h2>
+                <div class="job">
+                    <div class="job-title">Software Developer Intern</div>
+                    <div class="job-date">Protocolo Tours, Vancouver, BC</div>
+                    <div class="job-description">
+                        - Worked on building and enhancing the front-end of the Protocolo website using HTML, CSS, and JavaScript to ensure a responsive and user-friendly interface.<br>
+                        - Designed and developed wireframes and mockups for new website features and layouts using Figma, collaborating with designers to visualize user flows and interface improvements.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Software Integration Intern</div>
+                    <div class="job-date">QuadReal, Vancouver, BC</div>
+                    <div class="job-description">
+                        - Gained experience in software integration, data management, and system analysis.<br>
+                        - Worked on tasks related to documenting APIs, connecting different software systems, and ensuring they work together seamlessly.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Design Team Member</div>
+                    <div class="job-date">QMIND, Kingston, ON</div>
+                    <div class="job-description">
+                        - Developed AI-based prototypes or solutions, including AI research, AI ethics papers, disruptive technology projects, and consulting projects, solving real-world problems for industry clients.
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>RELEVANT SKILLS</h2>
+                <ul>
+                    <li><strong>Programming Languages:</strong> C, C++, Java, JavaScript, Python</li>
+                    <li><strong>Technologies:</strong> React, OpenCV, HTTP, the DOM, SSL, web servers, Blender, Arduino, Docker, Kubernetes</li>
+                    <li><strong>APIs:</strong> SOAP APIs, GraphQL</li>
+                    <li><strong>Other:</strong> Excel, 4D</li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>PROJECTS</h2>
+                <ul>
+                    <li><strong>Beat the Machine</strong> (QMIND, 2024) - A game with an AI opponent using reinforcement learning, experience replay, and double DQN.</li>
+                    <li><strong>MyFace</strong> (QMIND, 2023 – Present) - Facial recognition project using OpenCV and deep learning techniques to accurately detect and classify faces.</li>
+                    <li><strong>Campus Navigator</strong> (Personal Project, 2023) - Developed a campus navigation app with real-time GPS tracking and interactive campus maps.</li>
+                    <li><strong>Personal Website</strong> (Personal Project, 2024) - Created a personal website using Java, C, and HTML. Integrated 3D elements with Blender and Three.js libraries to enhance visual appeal and interactivity.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Typing effect section -->
+        <div class="typing-effect">
+            <div class="typing-line" id="line1">Hello, I'm Marcela Rojas</div>
+            <div class="typing-line" id="line2">and this is my portfolio!!</div>
+        </div>
+
+        <!-- Semi-transparent home button -->
+        <button class="home-button" onclick="window.location.href='home.html'"></button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.querySelector('.search-bar input');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const sections = document.querySelectorAll('.new-container section');
+
+                sections.forEach(section => {
+                    const sectionText = section.textContent.toLowerCase();
+
+                    if (sectionText.includes(searchTerm) && searchTerm.trim() !== "") {
+                        section.style.backgroundColor = '#f0f0f0'; // Highlight the section
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        section.style.backgroundColor = ''; // Reset background color
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Modeling Videos</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px; /* Fixed width for the entire container */
+            height: 768px; /* Fixed height for the entire container */
+            top: 50%;  /* Center the container vertically */
+            left: 50%; /* Center the container horizontally */
+            transform: translate(-50%, -50%);
+            background-image: url('background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Prevents overflow */
+        }
+
+        .new-container {
+            position: absolute;
+            width: 355px;  /* Fixed width */
+            height: 217px; /* Increased height to fit projects */
+            background: #c5c5c5;
+            padding: 15px;
+            border-radius: 1px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            top: 135px; /* Adjust to position inside the container */
+            left: 500px; /* Adjust to position inside the container */
+            border: 1px solid #4256a6;
+            overflow-y: auto;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column; /* Align videos vertically like project boxes */
+            gap: 15px;
+            width: 100%;
+        }
+
+        .video-box {
+            background: #e2e2e2;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-box h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .video-box video {
+            width: 100%;  /* Make the video take full width */
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        /* Semi-transparent home button */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(219, 219, 219, 0.3);
+            color: #c4c4c4;
+            border: 1px solid #4256a6;
+            padding: 5px 15px;
+            font-size: 1em;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <!-- Video container with 3D modeling videos -->
+        <div class="new-container">
+            <div class="video-container">
+                <!-- Video 1 -->
+                <div class="video-box" onclick="window.location.href='#'">
+                    <video controls>
+                        <source src="website.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>3D Model 1</h3>
+                </div>
+
+
+               
+            </div>
+        </div>
+
+        <!-- Home button -->
+        <button class="home-button" onclick="window.location.href='projects.html'">Back to Projects</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px; /* Fixed width for the entire container */
+            height: 768px; /* Fixed height for the entire container */
+            top: 50%;  /* Center the container vertically */
+            left: 50%; /* Center the container horizontally */
+            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
+            background-image: url('background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Prevents overflow */
+            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(1); /* Start smaller */
+            }
+            to {
+                transform: translate(-50%, -33%) scale(1.2); /* End at normal size */
+            }
+        }
+
+        .new-container {
+            position: absolute;
+            width: 355px;  /* Fixed width */
+            height: 217px; /* Increased height to fit projects */
+            background: #c5c5c5;
+            padding: 15px;
+            border-radius: 1px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            top: 135px; /* Adjust to position inside the container */
+            left: 500px; /* Adjust to position inside the container */
+            border: 1px solid #4256a6;
+            overflow-y: auto;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .project-box {
+            background: #e2e2e2;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-box h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Semi-transparent home button */
+        .home-button {
+            position: absolute;
+            bottom: 640px;
+            right: 855px;
+            background-color: rgba(219, 219, 219, 0.3);
+            color: #c4c4c4;
+            border: 0px solid #4256a6;
+            padding: 5px 15px;
+            font-size: 1em;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <!-- New container with project content -->
+        <div class="new-container">
+            <div class="projects-container">
+                <!-- Project Box 1 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="project2.jpg" alt="MyFace">
+                    <h3>MyFace</h3>
+                    <p>Facial recognition project using OpenCV and deep learning techniques to accurately detect and classify faces.</p>
+                </div>
+                 <!-- Project Box 2 -->
+                 <div class="project-box" onclick="window.location.href='website.html'">
+                    <img src="website.jpg" alt="3D Website">
+                     <h3>3D Interactive Website</h3>
+                     <p>A collection of 3D modeling projects created using Blender and other 3D software.</p>
+               </div>
+               
+                <!-- Project Box 3 -->
+                <div class="project-box" onclick="window.location.href='3dmodeling.html'">
+                    <img src="3d.jpg" alt="3D Modeling">
+                     <h3>Graphic Modeling</h3>
+                     <p>A collection of 3D modeling projects created using Blender and other 3D software.</p>
+               </div>
+               
+
+                <!-- Project Box 4 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="background.jpg" alt="Personal Website">
+                    <h3>Personal Website</h3>
+                    <p>Created a personal website using Java, C, and HTML with 3D elements using Blender and Three.js libraries.</p>
+                </div>
+               
+                <!-- Project Box 5 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="project1.jpg" alt="Beat the Machine">
+                    <h3>Beat the Machine</h3>
+                    <p>A game with an AI opponent using reinforcement learning, experience replay, and double DQN.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Home button -->
+        <button class="home-button" onclick="window.location.href='home.html'">  </button>
+    </div>
+</body>
+</html>
