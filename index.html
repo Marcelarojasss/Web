@@ -35,23 +35,7 @@
             overflow: hidden;
         }
 
-        .typing-effect {
-            position: absolute;
-            top: 200px;
-            left: 100px;
-            color: #fff;
-            font-size: 1em;
-            font-family: 'IBM Plex Mono', monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid;
-            background-color: #515151;
-            padding: 2px 4px;
-            border-radius: 4px;
-            max-width: 250px;
-            animation: typing 9s steps(40, end), blink-caret .75s step-end infinite;
-            z-index: 500;
-        }
+       
 
         @keyframes typing {
             from { width: 0; }
@@ -112,11 +96,7 @@
 <body>
     <!-- Main content container -->
     <div class="parent-container">
-        <!-- Typing effect section -->
-        <div class="typing-effect">
-            <div class="typing-line" id="line1">Hello, I'm Marcela Rojas</div>
-            <div class="typing-line" id="line2">Welcome to my portfolio!!</div>
-        </div>
+       
 
         <!-- Start button -->
         <button class="start-button" onclick="location.href='home.html'">Start</button>
@@ -127,26 +107,8 @@
         Please open full screen on a desktop computer for the best experience. <br>
     </div>
 
-    <!-- Typing sound effect -->
-    <audio id="typing-sound" src="typing.mp3" preload="auto"></audio>
+   
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const typingSound = document.getElementById("typing-sound");
-
-            function playTypingSound() {
-                typingSound.currentTime = 0;
-                typingSound.play();
-                typingSound.loop = true;
-
-                setTimeout(() => {
-                    typingSound.pause();
-                    typingSound.currentTime = 0;
-                }, 4000);
-            }
-
-            window.addEventListener("click", playTypingSound, { once: true });
-        });
-    </script>
+    
 </body>
 </html>
