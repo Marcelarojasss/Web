@@ -22,37 +22,28 @@
 
         .parent-container {
             position: absolute;
-            width: 1400px; /* Fixed width for the entire container */
-            height: 768px; /* Fixed height for the entire container */
-            top: 50%;  /* Center the container vertically */
-            left: 50%; /* Center the container horizontally */
-            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
+            width: 1400px;
+            height: 768px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%) scale(1.5); /* Set scale to 1.5 initially */
             background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             overflow: hidden; /* Prevents overflow */
-            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
         }
 
-        @keyframes zoomIn {
-            from {
-                transform: translate(-50%, -50%) scale(1.5); /* Start smaller */
-            }
-            to {
-                transform: translate(-50%, -40%) scale(1.5); /* End at normal size */
-            }
-        }
-         .new-container {
+        .new-container {
             position: absolute;
-            width: 245px;  /* Fixed width */
-            height: 145px; /* Fixed height */
-            background: rgba(210, 210, 210, 0.85); /* Slightly transparent white */
+            width: 245px;
+            height: 145px;
+            background: rgba(210, 210, 210, 0.85);
             padding: 15px;
-            border-radius: 0px; /* Rounded corners for a softer look */
+            border-radius: 0px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            top: 200px; /* Adjust to position inside the container */
-            left: 626px; /* Adjust to position inside the container */
+            top: 200px;
+            left: 626px;
             border: 1px solid #d0d0d0;
             display: flex;
             flex-direction: column;
@@ -60,11 +51,12 @@
             justify-content: flex-start;
             overflow-y: auto;
             z-index: 300;
-            backdrop-filter: blur(10px); /* Subtle blur effect for a polished look */
+            backdrop-filter: blur(10px);
         }
+
         .video-container {
             display: flex;
-            flex-direction: column; /* Align videos vertically like project boxes */
+            flex-direction: column;
             gap: 15px;
             width: 100%;
         }
@@ -95,12 +87,11 @@
         }
 
         .video-box video {
-            width: 100%;  /* Make the video take full width */
+            width: 100%;
             height: 200px;
             border-radius: 5px;
         }
 
-        /* Semi-transparent home button */
         .home-button {
             position: absolute;
             top: 20px;
@@ -129,9 +120,6 @@
                     </video>
                     <h3>3D Model 1</h3>
                 </div>
-
-
-               
             </div>
         </div>
 
