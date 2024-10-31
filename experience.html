@@ -22,66 +22,69 @@
 
         .parent-container {
             position: absolute;
-            width: 1400px; /* Fixed width for the entire container */
-            height: 768px; /* Fixed height for the entire container */
-            top: 50%;  /* Center the container vertically */
-            left: 50%; /* Center the container horizontally */
-            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
-            background-image: url('background.jpg');
+            width: 1400px;
+            height: 768px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden; /* Prevents overflow */
-            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
+            overflow: hidden;
+            animation: zoomIn 1.5s ease forwards;
         }
 
         @keyframes zoomIn {
             from {
-                transform: translate(-50%, -50%) scale(1); /* Start smaller */
+                transform: translate(-50%, -50%) scale(1.3);
             }
             to {
-                transform: translate(-50%, -33%) scale(1.2); /* End at normal size */
+                transform: translate(-50%, -40%) scale(1.5);
             }
         }
 
         .new-container {
             position: absolute;
-            width: 355px;  /* Increased width for better readability */
-            height: 220px; /* Adjusted height for search and content */
-            background: #c5c5c5;
+            width: 245px;
+            height: 145px;
+            background: rgba(210, 210, 210, 0.85);
             padding: 15px;
-            border-radius: 1px;
+            border-radius: 0px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            top: 135px; /* Adjust to position inside the container */
-            left: 500px; /* Adjust to position inside the container */
-            border: 1px solid #4256a6;
-            overflow-y: auto;
-            z-index: 300;
+            top: 200px;
+            left: 626px;
+            border: 1px solid #d0d0d0;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            justify-content: flex-start;
+            overflow-y: auto;
+            z-index: 300;
+            backdrop-filter: blur(10px);
+            font-size: 0.85em; /* Reduced font size */
         }
 
         .search-bar {
             position: absolute;
-            top: 2px; /* Adjust position as needed */
-            left: 52.8%;
+            top: 97px;
+            left: 57%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            z-index: 400; /* Make sure it appears above other elements */
-            width: 260px; /* Set a specific width for the search bar */
-            height: 230px; /* Set a specific width for the search bar */
-            padding: 5px 100px;
+            z-index: 400;
+            width: 192px;
+            height: 180px;
+            padding: 0.2px 70px;
         }
 
         .search-bar input {
-            width: 100%; /* Make input take up the full width of the search bar container */
-            height: 3px; /* Adjust height for better visibility */
-            padding: 5px 10px;
+            width: 100%;
+            height: 1px;
+            padding: 3px 1px;
             border: 1px solid #f4f4f4;
-            border-radius: 1px; /* Adjusted for better appearance */
-            font-size: 12px; /* Increased font size for readability */
+            border-radius: 2px;
+            font-size: 9px;
         }
 
         header {
@@ -91,29 +94,31 @@
 
         header h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 1.3em;
         }
 
         header p {
             margin: 5px 0;
-            font-size: 0.9em;
+            font-size: 0.6em;
         }
 
         section {
             margin-bottom: 20px;
         }
+
         .centered-header {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            text-align: center; /* Center text within the elements */
+            align-items: center;
+            text-align: center;
             margin-bottom: 20px;
+            margin-left:53px;
         }
 
         h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
-            font-size: 1.2em;
+            font-size: 1em;
             margin-top: 0;
         }
 
@@ -123,13 +128,13 @@
 
         .job-title {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 0.8em;
             margin-top: 10px;
         }
 
         .job-date {
             font-style: italic;
-            font-size: 0.9em;
+            font-size: 0.7em;
             margin-bottom: 5px;
         }
 
@@ -143,8 +148,8 @@
             line-height: 1.4;
         }
 
-        .job-description {
-            margin-left: 10px;
+        .job-description, .section-content {
+            font-size: 0.75em; /* Reduced font size for job descriptions and other section content */
         }
 
         .background {
@@ -159,45 +164,16 @@
             text-align: right;
         }
 
-        .typing-effect {
-            position: absolute;
-            top: 200px;
-            left: 100px;
-            color: #fff;
-            font-size: 1em;
-            font-family: 'IBM Plex Mono', monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid;
-            background-color: #000;
-            padding: 2px 4px;
-            border-radius: 4px;
-            max-width: 250px;
-            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-            z-index: 500; /* Ensure it's above other elements */
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: rgb(249, 249, 249); }
-        }
-
-        /* Semi-transparent home button */
         .home-button {
             position: absolute;
-            bottom: 640px;
-            right: 855px;
-            background-color: rgba(219, 219, 219, 0.3);
-            color: #c4c4c4;
-            border: 0px solid #4256a6;
-            padding: 5px 15px;
+            bottom: 575px;
+            right: 730px;
+            background-color: rgba(185, 185, 185, 0.1);
+            color: #fff;
+            border: 0px;
+            padding: 4px 18px;
             font-size: 1em;
-            border-radius: 2px;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
             z-index: 400;
@@ -206,12 +182,10 @@
 </head>
 <body>
     <div class="parent-container">
-        <!-- Search bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search for Keyword..." id="search-input">
         </div>
 
-        <!-- Container with resume content -->
         <div class="new-container">
             <header class="centered-header">
                 <h1>Marcela Rojas</h1>
@@ -221,19 +195,11 @@
 
             <section id="education">
                 <h2>EDUCATION</h2>
-                <p><strong>Bachelor of Applied Mathematics</strong>, Minor in Computer Science, Queen’s University, Kingston, ON<br>2022 - Present</p>
+                <p class="section-content"><strong>Bachelor of Computer Science</strong>, Minor in Applied Math, Queen’s University, Kingston, ON<br>2022 - Present</p>
             </section>
 
             <section id="experience">
                 <h2>PROFESSIONAL EXPERIENCE</h2>
-                <div class="job">
-                    <div class="job-title">Software Developer Intern</div>
-                    <div class="job-date">Protocolo Tours, Vancouver, BC</div>
-                    <div class="job-description">
-                        - Worked on building and enhancing the front-end of the Protocolo website using HTML, CSS, and JavaScript to ensure a responsive and user-friendly interface.<br>
-                        - Designed and developed wireframes and mockups for new website features and layouts using Figma, collaborating with designers to visualize user flows and interface improvements.
-                    </div>
-                </div>
 
                 <div class="job">
                     <div class="job-title">Software Integration Intern</div>
@@ -251,21 +217,39 @@
                         - Developed AI-based prototypes or solutions, including AI research, AI ethics papers, disruptive technology projects, and consulting projects, solving real-world problems for industry clients.
                     </div>
                 </div>
+
+                <div class="job">
+                    <div class="job-title">Resource Manager</div>
+                    <div class="job-date">COMPSA, Kingston, ON</div>
+                    <div class="job-description">
+                        - Assisted in the creation of a professional development section for COMPSA’s monthly newsletter, offering opportunities and guidance for Computing students.<br>
+                        - Contributed to web design projects and developed proficiency in web principles and standards.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Data Analyst Apprentice</div>
+                    <div class="job-date">Electronic Arts (EA), Remote</div>
+                    <div class="job-description">
+                        - Completed a summer apprenticeship as a data analyst intern, gaining hands-on experience with data analytics and foundational software engineering practices.<br>
+                        - Enhanced skills in data analysis techniques and tools, contributing to projects that improved data insights and strategic decision-making.
+                    </div>
+                </div>
             </section>
 
             <section id="skills">
                 <h2>RELEVANT SKILLS</h2>
-                <ul>
+                <ul class="section-content">
                     <li><strong>Programming Languages:</strong> C, C++, Java, JavaScript, Python</li>
                     <li><strong>Technologies:</strong> React, OpenCV, HTTP, the DOM, SSL, web servers, Blender, Arduino, Docker, Kubernetes</li>
-                    <li><strong>APIs:</strong> SOAP APIs, GraphQL</li>
+                    <li><strong>APIs:</strong> SOAP APIs, REST APIs, GraphQL</li>
                     <li><strong>Other:</strong> Excel, 4D</li>
                 </ul>
             </section>
 
             <section id="projects">
                 <h2>PROJECTS</h2>
-                <ul>
+                <ul class="section-content">
                     <li><strong>Beat the Machine</strong> (QMIND, 2024) - A game with an AI opponent using reinforcement learning, experience replay, and double DQN.</li>
                     <li><strong>MyFace</strong> (QMIND, 2023 – Present) - Facial recognition project using OpenCV and deep learning techniques to accurately detect and classify faces.</li>
                     <li><strong>Campus Navigator</strong> (Personal Project, 2023) - Developed a campus navigation app with real-time GPS tracking and interactive campus maps.</li>
@@ -274,13 +258,6 @@
             </section>
         </div>
 
-        <!-- Typing effect section -->
-        <div class="typing-effect">
-            <div class="typing-line" id="line1">Hello, I'm Marcela Rojas</div>
-            <div class="typing-line" id="line2">and this is my portfolio!!</div>
-        </div>
-
-        <!-- Semi-transparent home button -->
         <button class="home-button" onclick="window.location.href='home.html'"></button>
     </div>
 
@@ -295,10 +272,10 @@
                     const sectionText = section.textContent.toLowerCase();
 
                     if (sectionText.includes(searchTerm) && searchTerm.trim() !== "") {
-                        section.style.backgroundColor = '#f0f0f0'; // Highlight the section
+                        section.style.backgroundColor = '#f0f0f0';
                         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else {
-                        section.style.backgroundColor = ''; // Reset background color
+                        section.style.backgroundColor = '';
                     }
                 });
             });

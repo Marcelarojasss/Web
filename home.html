@@ -19,7 +19,15 @@
             color: #505050;
             background-color: #212020;
         }
-
+        @keyframes zoomIn {
+        from {
+            transform: translate(-50%, -50%) scale(1); /* Start zoomed out */
+        }
+        to {
+            transform: translate(-50%, -50%) scale(1.2); /* End at normal size */
+        }
+    }
+        
         .parent-container {
             position: absolute;
             width: 1400px; /* Fixed width for the entire container */
@@ -27,17 +35,19 @@
             top: 50%;  /* Center the container vertically */
             left: 50%; /* Center the container horizontally */
             transform: translate(-50%, -50%);
-            background-image: url('background.jpg');
+            background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             overflow: hidden; /* Prevents overflow */
+            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom-out */
+            animation: zoomIn 0.5s ease-out forwards; /* Smooth zoom-in on load */
         }
 
         .typing-effect {
             position: absolute;
             top: 200px;
-            left: 100px;
+            left: 250px;
             color: #fff;
             font-size: 1em;
             font-family: 'IBM Plex Mono', monospace;
@@ -62,22 +72,23 @@
             50% { border-color: white; }
         }
 
+    
         .home-button, .home-button2, .home-button3 {
             position: absolute;
             background-color: #636363; /* Solid gray */
             color: #dcdcdc; /* White text */
-            padding: 5px 10px;
+            padding: 3px 7px;
             border: 0px;
-            font-size: 1em;
+            font-size: 0.8em;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
             z-index: 400;
         }
 
-        .home-button { bottom: 445px; right: 770px; }
-        .home-button2 { bottom: 445px; right: 660px; }
-        .home-button3 { bottom: 445px; right: 570px; }
+        .home-button { bottom: 430px; right: 689px; }
+        .home-button2 { bottom: 430px; right: 600px; }
+        .home-button3 { bottom: 430px; right: 530px; }
     </style>
 </head>
 <body>
