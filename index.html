@@ -20,6 +20,7 @@
             background-color: #212020;
         }
 
+        /* Main content - hidden on mobile */
         .parent-container {
             position: absolute;
             width: 1400px;
@@ -81,9 +82,35 @@
         .start-button:hover {
             background-color: #818181;
         }
+
+        /* Warning message for mobile users */
+        .mobile-warning {
+            display: none; /* Hidden by default */
+            font-size: 1.5em;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 700;
+        }
+
+        /* Show warning message on small screens */
+        @media only screen and (max-width: 768px) {
+            .parent-container { 
+                display: none; /* Hide main content on mobile */
+            }
+            .mobile-warning {
+                display: block; /* Show mobile warning message */
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Main content container -->
     <div class="parent-container">
         <!-- Typing effect section -->
         <div class="typing-effect">
@@ -93,6 +120,11 @@
 
         <!-- Start button -->
         <button class="start-button" onclick="location.href='home.html'">Start</button>
+    </div>
+
+    <!-- Mobile warning message -->
+    <div class="mobile-warning">
+        Please open on a desktop computer for the best experience.
     </div>
 
     <!-- Typing sound effect -->
