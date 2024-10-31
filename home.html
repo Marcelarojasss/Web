@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Effect with Sound</title>
+    <title>Home</title>
     <style>
         html, body {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
         }
 
         body {
@@ -19,29 +19,19 @@
             color: #505050;
             background-color: #212020;
         }
-        @keyframes zoomIn {
-        from {
-            transform: translate(-50%, -50%) scale(1); /* Start zoomed out */
-        }
-        to {
-            transform: translate(-50%, -50%) scale(1.2); /* End at normal size */
-        }
-    }
-        
+
         .parent-container {
             position: absolute;
-            width: 1400px; /* Fixed width for the entire container */
-            height: 768px; /* Fixed height for the entire container */
-            top: 50%;  /* Center the container vertically */
-            left: 50%; /* Center the container horizontally */
+            width: 1400px;
+            height: 768px;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden; /* Prevents overflow */
-            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom-out */
-            animation: zoomIn 0.5s ease-out forwards; /* Smooth zoom-in on load */
+            overflow: hidden;
         }
 
         .typing-effect {
@@ -52,31 +42,17 @@
             font-size: 1em;
             font-family: 'IBM Plex Mono', monospace;
             white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid;
             background-color: #515151;
             padding: 2px 4px;
             border-radius: 4px;
             max-width: 250px;
-            animation: typing 9s steps(40, end), blink-caret .75s step-end infinite;
-            z-index: 500; /* Ensure it's above other elements */
+            z-index: 500;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-
-    
         .home-button, .home-button2, .home-button3 {
             position: absolute;
-            background-color: #636363; /* Solid gray */
-            color: #dcdcdc; /* White text */
+            background-color: #636363;
+            color: #dcdcdc;
             padding: 3px 7px;
             border: 0px;
             font-size: 0.8em;
@@ -92,12 +68,14 @@
     </style>
 </head>
 <body>
+    <iframe 
+    srcdoc="<audio src='Background3.mp3' autoplay loop></audio>" 
+    allow="autoplay" 
+    style="display: none;">
+</iframe>
     <div class="parent-container">
         <!-- Typing effect section -->
-        <div class="typing-effect">
-            <div class="typing-line" id="line1">Hello, I'm Marcela Rojas</div>
-            <div class="typing-line" id="line2">Welcome to my portfolio!!</div>
-        </div>
+        <div class="typing-effect" id="typing-effect"></div>
 
         <!-- Navigation buttons -->
         <button class="home-button" onclick="window.location.href='about.html'">About</button>
@@ -105,29 +83,49 @@
         <button class="home-button3" onclick="window.location.href='projects.html'">Projects</button>
     </div>
 
+    
     <!-- Typing sound effect -->
     <audio id="typing-sound" src="typing.mp3" preload="auto"></audio>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const typingEffect = document.querySelector(".typing-effect");
+            const typingEffect = document.getElementById("typing-effect");
             const typingSound = document.getElementById("typing-sound");
+            const lines = [
+                "Hello, I'm Marcela Rojas",
+                "Welcome to my portfolio!!"
+            ];
+            const typingSpeed = 150;
+            let currentLine = 0;
+            let charIndex = 0;
 
-            // Start the typing sound when the user clicks anywhere on the page
-            function playTypingSound() {
-                typingSound.currentTime = 0;
-                typingSound.play();
-                typingSound.loop = true;
-
-                // Stop the sound after 4 seconds, the duration of the typing animation
-                setTimeout(() => {
-                    typingSound.pause();
-                    typingSound.currentTime = 0;
-                }, 4000);
+            function typeLine() {
+                if (currentLine < lines.length) {
+                    if (charIndex < lines[currentLine].length) {
+                        typingEffect.innerHTML += lines[currentLine][charIndex];
+                        charIndex++;
+                        setTimeout(typeLine, typingSpeed);
+                    } else {
+                        charIndex = 0;
+                        currentLine++;
+                        setTimeout(() => {
+                            typingEffect.innerHTML += "<br>";
+                            typeLine();
+                        }, 1000);
+                    }
+                }
             }
 
-            // Attach event listener to the window to play sound on user interaction
-            window.addEventListener("click", playTypingSound, { once: true });
+            typingSound.currentTime = 0;
+            typingSound.play();
+            typingSound.loop = true;
+
+            setTimeout(() => {
+                typingSound.pause();
+                typingSound.currentTime = 0;
+            }, lines.join("").length * typingSpeed + (lines.length - 1) * 1000);
+
+            typeLine();
         });
     </script>
 </body>

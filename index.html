@@ -10,105 +10,29 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #a7a7a7; /* Grey background */
+            font-family: 'Courier New', monospace;
+            color: #2a2a2a; /* Black text */
         }
 
-        body {
-            position: relative;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #505050;
-            background-color: #212020;
-        }
-
-        /* Main content - hidden on mobile */
-        .parent-container {
-            position: absolute;
-            width: 1400px;
-            height: 768px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-image: url('index.jpg');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-
-       
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-
-        .start-button {
-            position: absolute;
-            bottom: 430px;
-            left: 54%;
-            transform: translateX(-50%);
-            padding: 3px 9px;
-            font-size: 14px;
-            color: #e1e1e1;
-            background-color: #656565;
-            border: none;
-            border-radius: 4px;
+        .start-text {
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: underline;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            z-index: 600;
-        }
-
-        .start-button:hover {
-            background-color: #818181;
-        }
-
-        /* Warning message for mobile users */
-        .mobile-warning {
-            display: none; /* Hidden by default */
-            font-size: 1.5em;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            background-color: #333333;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 700;
-        }
-
-        /* Show warning message on small screens */
-        @media only screen and (max-width: 768px) {
-            .parent-container { 
-                display: none; /* Hide main content on mobile */
-            }
-            .mobile-warning {
-                display: block; /* Show mobile warning message */
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Main content container -->
-    <div class="parent-container">
-       
+    <div class="start-text" onclick="startApp()">Start</div>
 
-        <!-- Start button -->
-        <button class="start-button" onclick="location.href='home.html'">Start</button>
-    </div>
-
-    <!-- Mobile warning message -->
-    <div class="mobile-warning">
-        Please open full screen on a desktop computer for the best experience. <br>
-    </div>
-
-   
-
-    
+    <script>
+        function startApp() {
+            location.href = 'start.html';
+        }
+    </script>
 </body>
 </html>
