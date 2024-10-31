@@ -27,30 +27,31 @@
             top: 50%;  /* Center the container vertically */
             left: 50%; /* Center the container horizontally */
             transform: translate(-50%, -50%);
-            background-image: url('background.jpg');
+            background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             overflow: hidden; /* Prevents overflow */
         }
 
-        .new-container {
+         .new-container {
             position: absolute;
-            width: 355px;  /* Fixed width */
-            height: 217px; /* Increased height to fit projects */
-            background: #c5c5c5;
+            width: 245px;  /* Fixed width */
+            height: 145px; /* Fixed height */
+            background: rgba(210, 210, 210, 0.85); /* Slightly transparent white */
             padding: 15px;
-            border-radius: 1px;
+            border-radius: 0px; /* Rounded corners for a softer look */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            top: 135px; /* Adjust to position inside the container */
-            left: 500px; /* Adjust to position inside the container */
-            border: 1px solid #4256a6;
-            overflow-y: auto;
-            z-index: 300;
+            top: 200px; /* Adjust to position inside the container */
+            left: 626px; /* Adjust to position inside the container */
+            border: 1px solid #d0d0d0;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: flex-start;
+            overflow-y: auto;
+            z-index: 300;
+            backdrop-filter: blur(10px); /* Subtle blur effect for a polished look */
         }
         .video-container {
             display: flex;
