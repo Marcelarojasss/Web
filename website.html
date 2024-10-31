@@ -95,16 +95,17 @@
 
         .home-button {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: rgba(219, 219, 219, 0.3);
-            color: #c4c4c4;
-            border: 1px solid #4256a6;
-            padding: 5px 15px;
+            bottom: 575px;
+            right: 730px;
+            background-color: rgba(185, 185, 185, 0.1); /* Slightly more solid */
+            color: #fff; /* White text */
+            border: 0px;
+            padding: 4px 18px;
             font-size: 1em;
-            border-radius: 2px;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
         }
     </style>
 </head>
@@ -125,7 +126,7 @@
         </div>
 
         <!-- Home button -->
-        <button class="home-button" onclick="window.location.href='projects.html'">Back to Projects</button>
+        <button class="home-button" onclick="window.location.href='projects.html'"></button>
     </div>
 </body>
 </html>
