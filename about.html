@@ -105,13 +105,33 @@
             align-items: center;
         }
 
-        .background img, .travel img, .gallery img {
+        .background img {
             width: 80px;
-            height: 120px;
+            height: 115px;
             border-radius: 8px;
             margin-right: 10px;
+            margin-top: -130px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
+        .background {
+    position: relative; /* Allow stacking */
+}
+
+.background-image {
+    width: 100%; /* Ensures the background image covers the entire area */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Block level to avoid gaps */
+}
+
+.overlay-image {
+    position: absolute; /* Position it over the background */
+    top: 93%; /* Adjust as needed to position it */
+    left: 4%; /* Adjust as needed to position it */
+    width: 80%; /* Control the size of little.jpg */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it is above the background image */
+}
 
         .background-content, .travel-content, .gallery-content {
             font-size: 0.5em;
@@ -200,15 +220,19 @@
             <div class="intro">
                 <img src="meme.jpg" alt="Marcela Rojas">
             </div>
-            
-            <!-- Background section -->
-            <div class="background">
-                <img src="back.jpg" alt="Background Image">
-                <div class="background-content">
-                    <h2>Background</h2>
-                    <p>I am originally from Venezuela and was lucky enough to move to Canada at the age of 12. Adapting to a new country and culture was challenging but it helped strengthen my adaptability. Quickly, I learned English and integrated into the Canadian lifestyle.</p>
-                </div>
-            </div>
+          <!-- Background section -->
+  
+    <div class="background">
+        <img src="back.jpg" alt="Background Image" class="background-image">
+        
+        <img src="little.jpg" alt="Additional Image" class="overlay-image"> <!-- Stacked on top of back.jpg -->
+    
+        <div class="background-content">
+            <h2>Background</h2>
+            <p>I am originally from Venezuela and moved to Canada at the age of 12. This transition was not without its difficulties; adapting to a new country and culture posed significant challenges. However, these experiences taught me invaluable lessons about resilience and adaptability. The process of learning English and navigating a different lifestyle pushed me out of my comfort zone and ultimately strengthened my ability to adjust to new situations. This journey has shaped my perspective, allowing me to appreciate the importance of flexibility and open-mindedness in overcoming obstacles.</p>
+        </div>
+    </div>
+    
 
 
         
