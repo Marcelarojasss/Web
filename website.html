@@ -26,14 +26,23 @@
             height: 768px; /* Fixed height for the entire container */
             top: 50%;  /* Center the container vertically */
             left: 50%; /* Center the container horizontally */
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
             background-image: url('index.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             overflow: hidden; /* Prevents overflow */
+            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
         }
 
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(1.5); /* Start smaller */
+            }
+            to {
+                transform: translate(-50%, -40%) scale(1.5); /* End at normal size */
+            }
+        }
          .new-container {
             position: absolute;
             width: 245px;  /* Fixed width */
