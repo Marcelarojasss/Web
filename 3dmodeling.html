@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Modeling Videos</title>
     <style>
-        html, body {
+         html, body {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         body {
@@ -96,9 +96,9 @@
         /* Semi-transparent home button */
         .home-button {
             position: absolute;
-            bottom: 554px;
+            bottom: 575px;
             right: 730px;
-            background-color: rgba(214, 178, 178, 0.1); /* Slightly more solid */
+            background-color: rgba(185, 185, 185, 0.1); /* Slightly more solid */
             color: #fff; /* White text */
             border: 0px;
             padding: 4px 18px;
@@ -114,8 +114,8 @@
     <!-- Persistent audio iframe, hidden -->
     <iframe src="audio.html" allow="autoplay" style="display: none;"></iframe>
 
-    <button class="home-button" onclick="window.location.href='home.html'"></button>
-
+   
+    
     <div class="parent-container">
         <!-- Video container with 3D modeling videos -->
         <div class="new-container">
@@ -166,6 +166,7 @@
                 </div>
             </div>
         </div>
+        <button class="home-button" onclick="window.location.href='home.html'"></button>
     </div>
 </body>
 </html>
