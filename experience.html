@@ -248,6 +248,52 @@
                     <li><strong>Other:</strong> Excel, 4D</li>
                 </ul>
             </section>
+            <section id="other-experience">
+    <h2>OTHER EXPERIENCE</h2>
+
+    <div class="job">
+        <div class="job-title">Host, Expo</div>
+        <div class="job-date">TAP and Barrel Shipyards, North Vancouver, BC</div>
+        <div class="job-description">
+            - Worked as a host, managing reservations and seating guests.
+        </div>
+    </div>
+
+    <div class="job">
+        <div class="job-title">Host</div>
+        <div class="job-date">Pier 7, North Vancouver, BC</div>
+        <div class="job-description">
+            - Worked as a host, ensuring smooth dining experiences for guests.
+        </div>
+    </div>
+
+    <div class="job">
+        <div class="job-title">Floor Associate</div>
+        <div class="job-date">North Shore Ski and Board, North Vancouver, BC</div>
+        <div class="job-description">
+            - Assisted in managing floor flow and supporting sales efforts.
+        </div>
+    </div>
+
+    <div class="job">
+        <div class="job-title">Bartender</div>
+        <div class="job-date">The Brewyard, Lower Lonsdale, North Vancouver, BC</div>
+        <div class="job-description">
+            - Worked as a bartender at a brewery pop-up, providing customer service and managing drink orders.
+        </div>
+    </div>
+</section>
+<section id="soft-skills">
+    <h2>SOFT SKILLS</h2>
+    <ul class="section-content">
+        <li><strong>Communication:</strong> Excellent verbal and written communication skills, able to convey ideas clearly and effectively.</li>
+        <li><strong>Teamwork:</strong> Strong team player, experience in collaborating with people to achieve common goals.</li>
+        <li><strong>Adaptability:</strong> Quick learner, capable of adapting to new environments and technologies.</li>
+        <li><strong>Problem Solving:</strong> Skilled at identifying issues and implementing practical solutions under pressure.</li>
+        <li><strong>Time Management:</strong> Able to prioritize tasks efficiently.</li>
+        <li><strong>Customer Service:</strong> Friendly and attentive in customer-facing roles, committed to ensuring positive experiences.</li>
+    </ul>
+</section>
 
             <section id="projects">
                 <h2>PROJECTS</h2>
@@ -268,24 +314,28 @@
     style="display: none;">
     </iframe>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const searchInput = document.querySelector('.search-bar input');
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                const sections = document.querySelectorAll('.new-container section');
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.querySelector('.search-bar input');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.new-container section');
 
-                sections.forEach(section => {
-                    const sectionText = section.textContent.toLowerCase();
+            sections.forEach(section => {
+                const sectionText = section.textContent.toLowerCase();
 
-                    if (sectionText.includes(searchTerm) && searchTerm.trim() !== "") {
-                        section.style.backgroundColor = '#f0f0f0';
-                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } else {
-                        section.style.backgroundColor = '';
-                    }
-                });
+                if (searchTerm && sectionText.includes(searchTerm)) {
+                    section.style.backgroundColor = '#f0f0f0'; // Highlight the section
+                    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    section.style.backgroundColor = ''; // Remove highlight if it doesn't match
+                }
             });
         });
+    });
+
+
     </script>
 </body>
 </html>
