@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px;
+            height: 768px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('index.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .typing-effect {
+            position: absolute;
+            top: 200px;
+            left: 250px;
+            color: #fff;
+            font-size: 1em;
+            font-family: 'IBM Plex Mono', monospace;
+            white-space: nowrap;
+            background-color: #515151;
+            padding: 2px 4px;
+            border-radius: 4px;
+            max-width: 250px;
+            z-index: 500;
+        }
+
+        .home-button, .home-button2, .home-button3 {
+            position: absolute;
+            background-color: #6d6d6d;
+            color: #dcdcdc;
+            padding: 3px 7px;
+            border: 0px;
+            font-size: 0.8em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
+        }
+
+        .home-button { bottom: 430px; right: 689px; }
+        .home-button2 { bottom: 430px; right: 600px; }
+        .home-button3 { bottom: 430px; right: 530px; }
+    </style>
+</head>
+<body>
+    <iframe 
+    srcdoc="<audio src='Background3.mp3' autoplay loop></audio>" 
+    allow="autoplay" 
+    style="display: none;">
+</iframe>
+    <div class="parent-container">
+        <!-- Typing effect section -->
+        <div class="typing-effect" id="typing-effect"></div>
+
+        <!-- Navigation buttons -->
+        <button class="home-button" onclick="window.location.href='about.html'">About</button>
+        <button class="home-button2" onclick="window.location.href='experience.html'">Experience</button>
+        <button class="home-button3" onclick="window.location.href='projects.html'">Projects</button>
+    </div>
+
+    
+    <!-- Typing sound effect -->
+    <audio id="typing-sound" src="typing.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const typingEffect = document.getElementById("typing-effect");
+            const typingSound = document.getElementById("typing-sound");
+            const lines = [
+                "Hello, I'm Marcela Rojas",
+                "Welcome to my portfolio!!"
+            ];
+            const typingSpeed = 150;
+            let currentLine = 0;
+            let charIndex = 0;
+
+            function typeLine() {
+                if (currentLine < lines.length) {
+                    if (charIndex < lines[currentLine].length) {
+                        typingEffect.innerHTML += lines[currentLine][charIndex];
+                        charIndex++;
+                        setTimeout(typeLine, typingSpeed);
+                    } else {
+                        charIndex = 0;
+                        currentLine++;
+                        setTimeout(() => {
+                            typingEffect.innerHTML += "<br>";
+                            typeLine();
+                        }, 1000);
+                    }
+                }
+            }
+
+            typingSound.currentTime = 0;
+            typingSound.play();
+            typingSound.loop = true;
+
+            setTimeout(() => {
+                typingSound.pause();
+                typingSound.currentTime = 0;
+            }, lines.join("").length * typingSpeed + (lines.length - 1) * 1000);
+
+            typeLine();
+        });
+    </script>
+</body>
+</html>

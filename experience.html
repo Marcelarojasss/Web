@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px;
+            height: 768px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background-image: url('index.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: zoomIn 1.5s ease forwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+            to {
+                transform: translate(-50%, -40%) scale(1.5);
+            }
+        }
+
+        .new-container {
+            position: absolute;
+            width: 245px;
+            height: 145px;
+            background: rgba(210, 210, 210, 0.85);
+            padding: 15px;
+            border-radius: 0px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            top: 200px;
+            left: 626px;
+            border: 1px solid #d0d0d0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            overflow-y: auto;
+            z-index: 300;
+            backdrop-filter: blur(10px);
+            font-size: 0.85em; /* Reduced font size */
+        }
+
+        .search-bar {
+            position: absolute;
+            top: 97px;
+            left: 57%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            z-index: 400;
+            width: 192px;
+            height: 180px;
+            padding: 0.2px 70px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            height: 1px;
+            padding: 3px 1px;
+            border: 1px solid #f4f4f4;
+            border-radius: 2px;
+            font-size: 9px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 0.6em;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .centered-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-left:53px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            font-size: 1em;
+            margin-top: 0;
+        }
+
+        .job {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .job-date {
+            font-style: italic;
+            font-size: 0.7em;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .job-description, .section-content {
+            font-size: 0.75em; /* Reduced font size for job descriptions and other section content */
+        }
+
+        .background {
+            margin-top: 20px;
+            width: 150px;
+            display: flex;
+            position: relative;
+        }
+
+        .background-content {
+            padding: 5px;
+            text-align: right;
+        }
+
+        .home-button {
+            position: absolute;
+            bottom: 575px;
+            right: 730px;
+            background-color: rgba(185, 185, 185, 0.1);
+            color: #fff;
+            border: 0px;
+            padding: 4px 18px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Keyword..." id="search-input">
+        </div>
+
+        <div class="new-container">
+            <header class="centered-header">
+                <h1>Marcela Rojas</h1>
+                <p>marcela.rojas.gonza@gmail.com | 604-652-4744</p>
+                <p><a href="https://ca.linkedin.com/in/marcelarojass" target="_blank">linkedin.com/in/marcelarojass</a></p>
+            </header>
+
+            <section id="education">
+                <h2>EDUCATION</h2>
+                <p class="section-content"><strong>Bachelor of Computer Science</strong>, Minor in Applied Math, Queen’s University, Kingston, ON<br>2022 - Present</p>
+            </section>
+
+            <section id="experience">
+                <h2>PROFESSIONAL EXPERIENCE</h2>
+
+                <div class="job">
+                    <div class="job-title">Software Integration Intern</div>
+                    <div class="job-date">QuadReal, Vancouver, BC</div>
+                    <div class="job-description">
+                        - Gained experience in software integration, data management, and system analysis.<br>
+                        - Worked on tasks related to documenting APIs, connecting different software systems, and ensuring they work together seamlessly.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Design Team Member</div>
+                    <div class="job-date">QMIND, Kingston, ON</div>
+                    <div class="job-description">
+                        - Developed AI-based prototypes or solutions, including AI research, AI ethics papers, disruptive technology projects, and consulting projects, solving real-world problems for industry clients.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Resource Manager</div>
+                    <div class="job-date">COMPSA, Kingston, ON</div>
+                    <div class="job-description">
+                        - Assisted in the creation of a professional development section for COMPSA’s monthly newsletter, offering opportunities and guidance for Computing students.<br>
+                        - Contributed to web design projects and developed proficiency in web principles and standards.
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Software Dev Forum Course </div>
+                    <div class="job-date">Electronic Arts, Course </div>
+                    <div class="job-description">
+                        - Studied frameworks for maximizing social impact and exploring strategies to address global challenges.<br>
+                        - Gained insights into ethical decision-making, evaluating high-impact actions across career paths, donations, and projects.<br>
+                        - Strengthened critical-thinking and problem-solving skills.<br>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>RELEVANT SKILLS</h2>
+                <ul class="section-content">
+                    <li><strong>Programming Languages:</strong> C, C++, Java, JavaScript, Python</li>
+                    <li><strong>Technologies:</strong> React, OpenCV, HTTP, the DOM, SSL, web servers, Blender, Arduino, Docker, Kubernetes</li>
+                    <li><strong>APIs:</strong> SOAP APIs, REST APIs, GraphQL</li>
+                    <li><strong>Other:</strong> Excel, 4D</li>
+                </ul>
+            </section>
+            <section id="other-experience">
+                <h2>OTHER EXPERIENCE</h2>
+            
+                <div class="job">
+                    <div class="job-title">Host, Expo</div>
+                    <div class="job-date">TAP and Barrel Shipyards, North Vancouver, BC</div>
+                    <div class="job-description">
+                        - Worked as a host, managing reservations and seating guests.<br>
+                        - Assisted servers and other team members during peak hours to ensure smooth operations.<br>
+                        - Effectively communicated with clients in times of high demand, ensuring positive experiences.
+                    </div>
+                </div>
+            
+                <div class="job">
+                    <div class="job-title">Host</div>
+                    <div class="job-date">Pier 7, North Vancouver, BC</div>
+                    <div class="job-description">
+                        - Ensured smooth dining experiences for guests.<br>
+                        - Provided assistance to clients during busy times, handling any complaints calmly and professionally.
+                        - Collaborated with the service team to improve workflow and enhance guest satisfaction.<br>
+                    </div>
+                </div>
+            
+                <div class="job">
+                    <div class="job-title">Floor Associate</div>
+                    <div class="job-date">North Shore Ski and Board, North Vancouver, BC</div>
+                    <div class="job-description">
+                        - Helped manage floor flow and assisted customers with finding the right equipment.<br>
+                        - Provided product recommendations and demonstrated in-depth knowledge of gear to help customers make informed purchases.<br>
+                        - Supported sales operations by keeping inventory organized and assisting in restocking displays.
+                    </div>
+                </div>
+            
+                <div class="job">
+                    <div class="job-title">Bartender</div>
+                    <div class="job-date">The Brewyard, Lower Lonsdale, North Vancouver, BC</div>
+                    <div class="job-description">
+                        - Worked as a bartender at a brewery pop-up, providing excellent customer service and managing drink orders.<br>
+                        - Engaged with customers in a friendly and approachable manner, creating a welcoming environment.<br>
+                        - Maintained a clean and organized bar area, ensuring quick service and high standards of hygiene.
+                    </div>
+                </div>
+            </section>
+            
+<section id="soft-skills">
+    <h2>SOFT SKILLS</h2>
+    <ul class="section-content">
+        <li><strong>Communication:</strong> Excellent verbal and written communication skills, able to convey ideas clearly and effectively.</li>
+        <li><strong>Teamwork:</strong> Strong team player, experience in collaborating with people to achieve common goals.</li>
+        <li><strong>Adaptability:</strong> Quick learner, capable of adapting to new environments and technologies.</li>
+        <li><strong>Problem Solving:</strong> Skilled at identifying issues and implementing practical solutions under pressure.</li>
+        <li><strong>Time Management:</strong> Able to prioritize tasks efficiently.</li>
+        <li><strong>Customer Service:</strong> Friendly and attentive in customer-facing roles, committed to ensuring positive experiences.</li>
+    </ul>
+</section>
+
+            <section id="projects">
+                <h2>PROJECTS</h2>
+                <ul class="section-content">
+                    <li><strong>Beat the Machine</strong> (QMIND, 2024) - A game with an AI opponent using reinforcement learning, experience replay, and double DQN.</li>
+                    <li><strong>MyFace</strong> (QMIND, 2023 – Present) - Facial recognition project using OpenCV and deep learning techniques to accurately detect and classify faces.</li>
+                    <li><strong>Campus Navigator</strong> (Personal Project, 2023) - Developed a campus navigation app with real-time GPS tracking and interactive campus maps.</li>
+                    <li><strong>Personal Website</strong> (Personal Project, 2024) - Created a personal website using Java, C, and HTML. Integrated 3D elements with Blender and Three.js libraries to enhance visual appeal and interactivity.</li>
+                </ul>
+            </section>
+        </div>
+
+        <button class="home-button" onclick="window.location.href='home.html'"></button>
+    </div>
+    <iframe 
+    srcdoc="<audio src='Background1.mp3' autoplay loop></audio>" 
+    allow="autoplay" 
+    style="display: none;">
+    </iframe>
+    <script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.querySelector('.search-bar input');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.new-container section');
+
+            sections.forEach(section => {
+                const sectionText = section.textContent.toLowerCase();
+
+                if (searchTerm && sectionText.includes(searchTerm)) {
+                    section.style.backgroundColor = '#f0f0f0'; // Highlight the section
+                    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    section.style.backgroundColor = ''; // Remove highlight if it doesn't match
+                }
+            });
+        });
+    });
+
+
+    </script>
+</body>
+</html>

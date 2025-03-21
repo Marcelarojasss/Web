@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        body {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #505050;
+            background-color: #212020;
+            font-size: 0.4em;
+        }
+
+        .parent-container {
+            position: absolute;
+            width: 1400px; /* Fixed width for the entire container */
+            height: 768px; /* Fixed height for the entire container */
+            top: 50%;  /* Center the container vertically */
+            left: 50%; /* Center the container horizontally */
+            transform: translate(-50%, -50%) scale(0.8); /* Initial zoom level */
+            background-image: url('index.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Prevents overflow */
+            animation: zoomIn 1.5s ease forwards; /* Zoom-in effect */
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: translate(-50%, -50%) scale(1.3); /* Start smaller */
+            }
+            to {
+                transform: translate(-50%, -40%) scale(1.5); /* End at normal size */
+            }
+        }
+
+        .new-container {
+            position: absolute;
+            width: 245px;  /* Fixed width */
+            height: 145px; /* Fixed height */
+            background: rgba(210, 210, 210, 0.85); /* Slightly transparent white */
+            padding: 15px;
+            border-radius: 0px; /* Rounded corners for a softer look */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            top: 200px; /* Adjust to position inside the container */
+            left: 626px; /* Adjust to position inside the container */
+            border: 1px solid #d0d0d0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            overflow-y: auto;
+            z-index: 300;
+            backdrop-filter: blur(10px); /* Subtle blur effect for a polished look */
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .project-box {
+            background: #e2e2e2;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-box h3 {
+            margin: 10px 0;
+            font-size: 0.8em;
+            color: #333;
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Semi-transparent home button */
+        .home-button {
+            position: absolute;
+            bottom: 575px;
+            right: 730px;
+            background-color: rgba(185, 185, 185, 0.1); /* Slightly more solid */
+            color: #fff; /* White text */
+            border: 0px;
+            padding: 4px 18px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 400;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Persistent audio iframe, hidden -->
+    <iframe src="Background3.mp3" allow="autoplay" style="display: none;"></iframe>
+
+    <div class="parent-container">
+        <!-- New container with project content -->
+        <div class="new-container">
+            <div class="projects-container">
+                <!-- Project Box 1 -->
+                <div class="project-box" onclick="window.location.href='https://github.com/Marcelarojasss/MyFace'">
+                    <img src="project2.jpg" alt="MyFace">
+                    <h3>MyFace</h3>
+                    <p>Facial recognition project using OpenCV and deep learning techniques to accurately detect and classify faces.</p>
+                </div>
+                 <!-- Project Box 2 -->
+                 <div class="project-box" onclick="window.location.href='website.html'">
+                    <img src="website.jpg" alt="3D Website">
+                     <h3>3D Interactive Website</h3>
+                     <p>My 3D interactive website Three.js libraries for graphic rendering</p>
+               </div>
+               
+                <!-- Project Box 3 -->
+                <div class="project-box" onclick="window.location.href='3dmodeling.html'">
+                    <img src="3d.jpg" alt="3D Modeling">
+                     <h3>Graphic Modeling</h3>
+                     <p>A collection of 3D modeling projects created using Blender and other 3D software.</p>
+               </div>
+               
+
+                <!-- Project Box 4 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="index.jpg" alt="Personal Website">
+                    <h3>Personal Website</h3>
+                    <p>Created a personal website using Java, C, and HTML with 3D elements using Blender and Three.js libraries.</p>
+                </div>
+               
+                <!-- Project Box 5 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="gamemod.jpg" alt="Beat the Machine">
+                    <h3>Games and Mods</h3>
+                    <p> Coming Soon...</p>
+                </div>
+               
+                <!-- Project Box 6 -->
+                <div class="project-box" onclick="window.location.href='#'">
+                    <img src="project1.jpg" alt="Beat the Machine">
+                    <h3>Beat the Machine</h3>
+                    <p>A game with an AI opponent using reinforcement learning, experience replay, and double DQN.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Home button -->
+        <button class="home-button" onclick="window.location.href='home.html'">  </button>
+    </div>
+</body>
+</html>
